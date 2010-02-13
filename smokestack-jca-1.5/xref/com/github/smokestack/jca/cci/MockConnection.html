@@ -48,88 +48,108 @@
 <a name="38" href="#38">38</a>  <em class="jxr_comment">	 */</em>
 <a name="39" href="#39">39</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> close() <strong class="jxr_keyword">throws</strong> ResourceException {
 <a name="40" href="#40">40</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
-<a name="41" href="#41">41</a>  		connectionState=ConnectionState.CLOSE;
+<a name="41" href="#41">41</a>  		_close();
 <a name="42" href="#42">42</a>  	}
 <a name="43" href="#43">43</a>  
-<a name="44" href="#44">44</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="45" href="#45">45</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#createInteraction()</em>
-<a name="46" href="#46">46</a>  <em class="jxr_comment">	 */</em>
-<a name="47" href="#47">47</a>  	<strong class="jxr_keyword">public</strong> Interaction createInteraction() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="48" href="#48">48</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
-<a name="49" href="#49">49</a>  		<strong class="jxr_keyword">if</strong> (mockInteraction==<strong class="jxr_keyword">null</strong>){
-<a name="50" href="#50">50</a>  			mockInteraction=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockInteraction.html">MockInteraction</a>(<strong class="jxr_keyword">this</strong>);
-<a name="51" href="#51">51</a>  		}
-<a name="52" href="#52">52</a>  		<strong class="jxr_keyword">return</strong> mockInteraction;
-<a name="53" href="#53">53</a>  	}
-<a name="54" href="#54">54</a>  
-<a name="55" href="#55">55</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="56" href="#56">56</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getLocalTransaction()</em>
-<a name="57" href="#57">57</a>  <em class="jxr_comment">	 */</em>
-<a name="58" href="#58">58</a>  	<strong class="jxr_keyword">public</strong> LocalTransaction getLocalTransaction() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="59" href="#59">59</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
-<a name="60" href="#60">60</a>  		<strong class="jxr_keyword">if</strong> (mockTransaction==<strong class="jxr_keyword">null</strong>){
-<a name="61" href="#61">61</a>  			mockTransaction=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockLocalTransaction.html">MockLocalTransaction</a>();
-<a name="62" href="#62">62</a>  		}
-<a name="63" href="#63">63</a>  		<strong class="jxr_keyword">return</strong> mockTransaction;
-<a name="64" href="#64">64</a>  	}
-<a name="65" href="#65">65</a>  
-<a name="66" href="#66">66</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="67" href="#67">67</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getMetaData()</em>
-<a name="68" href="#68">68</a>  <em class="jxr_comment">	 */</em>
-<a name="69" href="#69">69</a>  	<strong class="jxr_keyword">public</strong> ConnectionMetaData getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="70" href="#70">70</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
-<a name="71" href="#71">71</a>  		<strong class="jxr_keyword">if</strong> (mockConnectionMetaData==<strong class="jxr_keyword">null</strong>){
-<a name="72" href="#72">72</a>  			mockConnectionMetaData=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockConnectionMetaData.html">MockConnectionMetaData</a>();
-<a name="73" href="#73">73</a>  		}
-<a name="74" href="#74">74</a>  		<strong class="jxr_keyword">return</strong> mockConnectionMetaData;
-<a name="75" href="#75">75</a>  	}
-<a name="76" href="#76">76</a>  
-<a name="77" href="#77">77</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="78" href="#78">78</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getResultSetInfo()</em>
-<a name="79" href="#79">79</a>  <em class="jxr_comment">	 */</em>
-<a name="80" href="#80">80</a>  	<strong class="jxr_keyword">public</strong> ResultSetInfo getResultSetInfo() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="81" href="#81">81</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
-<a name="82" href="#82">82</a>  		<strong class="jxr_keyword">if</strong> (mockResultSetInfo==<strong class="jxr_keyword">null</strong>){
-<a name="83" href="#83">83</a>  			mockResultSetInfo=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockResultSetInfo.html">MockResultSetInfo</a>();
-<a name="84" href="#84">84</a>  		}
-<a name="85" href="#85">85</a>  		<strong class="jxr_keyword">return</strong> mockResultSetInfo;
-<a name="86" href="#86">86</a>  	}
-<a name="87" href="#87">87</a>  	
-<a name="88" href="#88">88</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockComplete(){
-<a name="89" href="#89">89</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.CLOSE));
-<a name="90" href="#90">90</a>  		<strong class="jxr_keyword">if</strong> (mockTransaction!=<strong class="jxr_keyword">null</strong>){
-<a name="91" href="#91">91</a>  			mockTransaction.assertMockComplete();			
-<a name="92" href="#92">92</a>  		}
-<a name="93" href="#93">93</a>  		<strong class="jxr_keyword">if</strong> (mockInteraction!=<strong class="jxr_keyword">null</strong>){
-<a name="94" href="#94">94</a>  			mockInteraction.validateMockComplete();			
-<a name="95" href="#95">95</a>  		}		
-<a name="96" href="#96">96</a>  	}
-<a name="97" href="#97">97</a>  	
-<a name="98" href="#98">98</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockCommit(){
-<a name="99" href="#99">99</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.CLOSE));
-<a name="100" href="#100">100</a> 		<strong class="jxr_keyword">if</strong> (mockTransaction!=<strong class="jxr_keyword">null</strong>){
-<a name="101" href="#101">101</a> 			mockTransaction.assertMockCommit();			
-<a name="102" href="#102">102</a> 		}
-<a name="103" href="#103">103</a> 		<strong class="jxr_keyword">if</strong> (mockInteraction!=<strong class="jxr_keyword">null</strong>){
-<a name="104" href="#104">104</a> 			mockInteraction.validateMockComplete();			
-<a name="105" href="#105">105</a> 		}		
+<a name="44" href="#44">44</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _close() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="45" href="#45">45</a>  		connectionState=ConnectionState.CLOSE;
+<a name="46" href="#46">46</a>  	}
+<a name="47" href="#47">47</a>  
+<a name="48" href="#48">48</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="49" href="#49">49</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#createInteraction()</em>
+<a name="50" href="#50">50</a>  <em class="jxr_comment">	 */</em>
+<a name="51" href="#51">51</a>  	<strong class="jxr_keyword">public</strong> Interaction createInteraction() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="52" href="#52">52</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
+<a name="53" href="#53">53</a>  		<strong class="jxr_keyword">return</strong> _createInteraction();
+<a name="54" href="#54">54</a>  	}
+<a name="55" href="#55">55</a>  
+<a name="56" href="#56">56</a>  	<strong class="jxr_keyword">public</strong> Interaction _createInteraction() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="57" href="#57">57</a>  		<strong class="jxr_keyword">if</strong> (mockInteraction==<strong class="jxr_keyword">null</strong>){
+<a name="58" href="#58">58</a>  			mockInteraction=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockInteraction.html">MockInteraction</a>(<strong class="jxr_keyword">this</strong>);
+<a name="59" href="#59">59</a>  		}
+<a name="60" href="#60">60</a>  		<strong class="jxr_keyword">return</strong> mockInteraction;
+<a name="61" href="#61">61</a>  	}
+<a name="62" href="#62">62</a>  
+<a name="63" href="#63">63</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="64" href="#64">64</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getLocalTransaction()</em>
+<a name="65" href="#65">65</a>  <em class="jxr_comment">	 */</em>
+<a name="66" href="#66">66</a>  	<strong class="jxr_keyword">public</strong> LocalTransaction getLocalTransaction() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="67" href="#67">67</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
+<a name="68" href="#68">68</a>  		<strong class="jxr_keyword">return</strong> _getLocalTransaction();
+<a name="69" href="#69">69</a>  	}
+<a name="70" href="#70">70</a>  
+<a name="71" href="#71">71</a>  	<strong class="jxr_keyword">public</strong> LocalTransaction _getLocalTransaction() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="72" href="#72">72</a>  		<strong class="jxr_keyword">if</strong> (mockTransaction==<strong class="jxr_keyword">null</strong>){
+<a name="73" href="#73">73</a>  			mockTransaction=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockLocalTransaction.html">MockLocalTransaction</a>();
+<a name="74" href="#74">74</a>  		}
+<a name="75" href="#75">75</a>  		<strong class="jxr_keyword">return</strong> mockTransaction;
+<a name="76" href="#76">76</a>  	}
+<a name="77" href="#77">77</a>  
+<a name="78" href="#78">78</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="79" href="#79">79</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getMetaData()</em>
+<a name="80" href="#80">80</a>  <em class="jxr_comment">	 */</em>
+<a name="81" href="#81">81</a>  	<strong class="jxr_keyword">public</strong> ConnectionMetaData getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="82" href="#82">82</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
+<a name="83" href="#83">83</a>  		<strong class="jxr_keyword">return</strong> _getMetaData();
+<a name="84" href="#84">84</a>  	}
+<a name="85" href="#85">85</a>  
+<a name="86" href="#86">86</a>  	<strong class="jxr_keyword">public</strong> ConnectionMetaData _getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="87" href="#87">87</a>  		<strong class="jxr_keyword">if</strong> (mockConnectionMetaData==<strong class="jxr_keyword">null</strong>){
+<a name="88" href="#88">88</a>  			mockConnectionMetaData=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockConnectionMetaData.html">MockConnectionMetaData</a>();
+<a name="89" href="#89">89</a>  		}
+<a name="90" href="#90">90</a>  		<strong class="jxr_keyword">return</strong> mockConnectionMetaData;
+<a name="91" href="#91">91</a>  	}
+<a name="92" href="#92">92</a>  
+<a name="93" href="#93">93</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="94" href="#94">94</a>  <em class="jxr_comment">	 * @see javax.resource.cci.Connection#getResultSetInfo()</em>
+<a name="95" href="#95">95</a>  <em class="jxr_comment">	 */</em>
+<a name="96" href="#96">96</a>  	<strong class="jxr_keyword">public</strong> ResultSetInfo getResultSetInfo() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="97" href="#97">97</a>  		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.NEW));
+<a name="98" href="#98">98</a>  		<strong class="jxr_keyword">return</strong> _getResultSetInfo();
+<a name="99" href="#99">99</a>  	}
+<a name="100" href="#100">100</a> 	
+<a name="101" href="#101">101</a> 	<strong class="jxr_keyword">public</strong> ResultSetInfo _getResultSetInfo() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="102" href="#102">102</a> 		<strong class="jxr_keyword">if</strong> (mockResultSetInfo==<strong class="jxr_keyword">null</strong>){
+<a name="103" href="#103">103</a> 			mockResultSetInfo=<strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/cci/MockResultSetInfo.html">MockResultSetInfo</a>();
+<a name="104" href="#104">104</a> 		}
+<a name="105" href="#105">105</a> 		<strong class="jxr_keyword">return</strong> mockResultSetInfo;
 <a name="106" href="#106">106</a> 	}
 <a name="107" href="#107">107</a> 	
-<a name="108" href="#108">108</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockRollback(){
+<a name="108" href="#108">108</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockComplete(){
 <a name="109" href="#109">109</a> 		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.CLOSE));
 <a name="110" href="#110">110</a> 		<strong class="jxr_keyword">if</strong> (mockTransaction!=<strong class="jxr_keyword">null</strong>){
-<a name="111" href="#111">111</a> 			mockTransaction.validateMockRollback();			
+<a name="111" href="#111">111</a> 			mockTransaction.assertMockComplete();			
 <a name="112" href="#112">112</a> 		}
 <a name="113" href="#113">113</a> 		<strong class="jxr_keyword">if</strong> (mockInteraction!=<strong class="jxr_keyword">null</strong>){
 <a name="114" href="#114">114</a> 			mockInteraction.validateMockComplete();			
 <a name="115" href="#115">115</a> 		}		
 <a name="116" href="#116">116</a> 	}
 <a name="117" href="#117">117</a> 	
-<a name="118" href="#118">118</a> 	@Override
-<a name="119" href="#119">119</a> 	<strong class="jxr_keyword">public</strong> String toString(){
-<a name="120" href="#120">120</a> 		<strong class="jxr_keyword">return</strong> ReflectionToStringBuilder.toString(<strong class="jxr_keyword">this</strong>, ToStringStyle.MULTI_LINE_STYLE);
-<a name="121" href="#121">121</a> 	}
-<a name="122" href="#122">122</a> }
+<a name="118" href="#118">118</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockCommit(){
+<a name="119" href="#119">119</a> 		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.CLOSE));
+<a name="120" href="#120">120</a> 		<strong class="jxr_keyword">if</strong> (mockTransaction!=<strong class="jxr_keyword">null</strong>){
+<a name="121" href="#121">121</a> 			mockTransaction.assertMockCommit();			
+<a name="122" href="#122">122</a> 		}
+<a name="123" href="#123">123</a> 		<strong class="jxr_keyword">if</strong> (mockInteraction!=<strong class="jxr_keyword">null</strong>){
+<a name="124" href="#124">124</a> 			mockInteraction.validateMockComplete();			
+<a name="125" href="#125">125</a> 		}		
+<a name="126" href="#126">126</a> 	}
+<a name="127" href="#127">127</a> 	
+<a name="128" href="#128">128</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> validateMockRollback(){
+<a name="129" href="#129">129</a> 		assertThat(<span class="jxr_string">"connectionState"</span>, connectionState, Is.is(ConnectionState.CLOSE));
+<a name="130" href="#130">130</a> 		<strong class="jxr_keyword">if</strong> (mockTransaction!=<strong class="jxr_keyword">null</strong>){
+<a name="131" href="#131">131</a> 			mockTransaction.validateMockRollback();			
+<a name="132" href="#132">132</a> 		}
+<a name="133" href="#133">133</a> 		<strong class="jxr_keyword">if</strong> (mockInteraction!=<strong class="jxr_keyword">null</strong>){
+<a name="134" href="#134">134</a> 			mockInteraction.validateMockComplete();			
+<a name="135" href="#135">135</a> 		}		
+<a name="136" href="#136">136</a> 	}
+<a name="137" href="#137">137</a> 	
+<a name="138" href="#138">138</a> 	@Override
+<a name="139" href="#139">139</a> 	<strong class="jxr_keyword">public</strong> String toString(){
+<a name="140" href="#140">140</a> 		<strong class="jxr_keyword">return</strong> ReflectionToStringBuilder.toString(<strong class="jxr_keyword">this</strong>, ToStringStyle.MULTI_LINE_STYLE);
+<a name="141" href="#141">141</a> 	}
+<a name="142" href="#142">142</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

@@ -56,10 +56,10 @@
 <a name="46" href="#46">46</a>  
 <a name="47" href="#47">47</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> testGetAdapterNameMock() <strong class="jxr_keyword">throws</strong> ResourceException {
 <a name="48" href="#48">48</a>  		<strong class="jxr_keyword">new</strong> Expectations() {
-<a name="49" href="#49">49</a>  			@Mocked( methods= { <span class="jxr_string">"getAdapterName"</span> })
+<a name="49" href="#49">49</a>  			@Mocked( methods= { <span class="jxr_string">"_getAdapterName"</span> })
 <a name="50" href="#50">50</a>  			MockResourceAdapterMetaData mock;
 <a name="51" href="#51">51</a>  			{
-<a name="52" href="#52">52</a>  				mock.getAdapterName(); returns(<span class="jxr_string">"FOO"</span>);
+<a name="52" href="#52">52</a>  				mock._getAdapterName(); returns(<span class="jxr_string">"FOO"</span>);
 <a name="53" href="#53">53</a>  			}
 <a name="54" href="#54">54</a>  		};
 <a name="55" href="#55">55</a>  		MockConnectionFactory cf = <strong class="jxr_keyword">new</strong> MockConnectionFactory();

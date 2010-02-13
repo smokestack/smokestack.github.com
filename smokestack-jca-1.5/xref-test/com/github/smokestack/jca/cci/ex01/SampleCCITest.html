@@ -60,13 +60,13 @@
 <a name="50" href="#50">50</a>  		ic.bind(<span class="jxr_string">"java:comp/env/eis/myConnection"</span>, cf);
 <a name="51" href="#51">51</a>  
 <a name="52" href="#52">52</a>  		<strong class="jxr_keyword">new</strong> Expectations() {
-<a name="53" href="#53">53</a>  			@Mocked( methods= { <span class="jxr_string">"execute"</span> })
+<a name="53" href="#53">53</a>  			@Mocked( methods= { <span class="jxr_string">"_execute"</span> })
 <a name="54" href="#54">54</a>  			MockInteraction mock;
 <a name="55" href="#55">55</a>  			{
 <a name="56" href="#56">56</a>  				Record outRec = <strong class="jxr_keyword">new</strong> <a href="../../../../../../com/github/smokestack/jca/cci/ex01/SampleRecord.html">SampleRecord</a>();
 <a name="57" href="#57">57</a>  				outRec.setRecordName(<span class="jxr_string">"BAR"</span>);
 <a name="58" href="#58">58</a>  				outRec.setRecordShortDescription(<span class="jxr_string">"bar"</span>);
-<a name="59" href="#59">59</a>  				mock.execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO"</span>))));
+<a name="59" href="#59">59</a>  				mock._execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO"</span>))));
 <a name="60" href="#60">60</a>  				returns(outRec);
 <a name="61" href="#61">61</a>  			}
 <a name="62" href="#62">62</a>  		};
@@ -88,13 +88,13 @@
 <a name="78" href="#78">78</a>  		ic.bind(<span class="jxr_string">"java:comp/env/eis/myConnection"</span>, cf);
 <a name="79" href="#79">79</a>  
 <a name="80" href="#80">80</a>  		<strong class="jxr_keyword">new</strong> Expectations() {
-<a name="81" href="#81">81</a>  			@Mocked( methods= { <span class="jxr_string">"execute"</span> })
+<a name="81" href="#81">81</a>  			@Mocked( methods= { <span class="jxr_string">"_execute"</span> })
 <a name="82" href="#82">82</a>  			MockInteraction mock;
 <a name="83" href="#83">83</a>  			{
 <a name="84" href="#84">84</a>  				Record outRec = <strong class="jxr_keyword">new</strong> <a href="../../../../../../com/github/smokestack/jca/cci/ex01/SampleRecord.html">SampleRecord</a>();
 <a name="85" href="#85">85</a>  				outRec.setRecordName(<span class="jxr_string">"BAR"</span>);
 <a name="86" href="#86">86</a>  				outRec.setRecordShortDescription(<span class="jxr_string">"bar"</span>);
-<a name="87" href="#87">87</a>  				mock.execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO1"</span>))));
+<a name="87" href="#87">87</a>  				mock._execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO1"</span>))));
 <a name="88" href="#88">88</a>  				returns(outRec);
 <a name="89" href="#89">89</a>  			}
 <a name="90" href="#90">90</a>  		};
@@ -116,18 +116,18 @@
 <a name="106" href="#106">106</a> 		ic.bind(<span class="jxr_string">"java:comp/env/eis/myConnection"</span>, cf);
 <a name="107" href="#107">107</a> 
 <a name="108" href="#108">108</a> 		<strong class="jxr_keyword">new</strong> Expectations() {
-<a name="109" href="#109">109</a> 			@Mocked( methods= { <span class="jxr_string">"execute"</span> })
+<a name="109" href="#109">109</a> 			@Mocked( methods= { <span class="jxr_string">"_execute"</span> })
 <a name="110" href="#110">110</a> 			MockInteraction mock;
 <a name="111" href="#111">111</a> 			{
 <a name="112" href="#112">112</a> 				Record outRec = <strong class="jxr_keyword">new</strong> <a href="../../../../../../com/github/smokestack/jca/cci/ex01/SampleRecord.html">SampleRecord</a>();
 <a name="113" href="#113">113</a> 				outRec.setRecordName(<span class="jxr_string">"BAR"</span>);
 <a name="114" href="#114">114</a> 				outRec.setRecordShortDescription(<span class="jxr_string">"bar"</span>);
-<a name="115" href="#115">115</a> 				mock.execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO"</span>))));
+<a name="115" href="#115">115</a> 				mock._execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO"</span>))));
 <a name="116" href="#116">116</a> 				returns(outRec);
 <a name="117" href="#117">117</a> 				Record outRec1 = <strong class="jxr_keyword">new</strong> <a href="../../../../../../com/github/smokestack/jca/cci/ex01/SampleRecord.html">SampleRecord</a>();
 <a name="118" href="#118">118</a> 				outRec1.setRecordName(<span class="jxr_string">"BAR1"</span>);
 <a name="119" href="#119">119</a> 				outRec1.setRecordShortDescription(<span class="jxr_string">"bar"</span>);
-<a name="120" href="#120">120</a> 				mock.execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO1"</span>))));
+<a name="120" href="#120">120</a> 				mock._execute((InteractionSpec)<strong class="jxr_keyword">null</strong>, (Record)with(HasPropertyWithValue.&lt;Record&gt;hasProperty(<span class="jxr_string">"recordName"</span>, IsEqual.equalTo(<span class="jxr_string">"FOO1"</span>))));
 <a name="121" href="#121">121</a> 				returns(outRec1);
 <a name="122" href="#122">122</a> 			}
 <a name="123" href="#123">123</a> 		};
