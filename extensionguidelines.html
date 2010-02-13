@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Smokestack - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+          </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="" id="bannerLeft">
+    
+            Smokestack
+    
+            </a>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2010-02-13
+                      </div>
+            <div class="xright">            <a href="http://smokestack.github.com/" class="externalLink">Home</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Documentation</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="design.html">Design</a>
+          </li>
+              
+    <li class="none">
+                    <a href="usage.html">Usage</a>
+          </li>
+              
+    <li class="none">
+                    <a href="faq.html">FAQ</a>
+          </li>
+              
+    <li class="none">
+              <strong>Extensions Guidelines</strong>
+        </li>
+          </ul>
+              <h5>Modules</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="smokestack-common/index.html">Smokestack Common</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jndi-1.2/index.html">Smokestack JNDI 1.2</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jpa-1.0/index.html">Smokestack JPA 1.0</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jms-1.1/index.html">Smokestack JMS 1.1</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jca-1.5/index.html">Smokestack JCA 1.5</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-ejb-3.0/index.html">Smokestack EJB 3.0</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jdbc-3.0/index.html">Smokestack JDBC 3.0</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="source"><pre>Extension Guidelines</pre>
+</div>
+<p>The design is based on the following classification of operations: * Methods that change the state of the container (e.g connection.commit()) * Methods that provide container specific components (e.g connection.createStatement()) * Methods that are simple getter/setter types (e.g connection.getHoldability(), connection.setHoldability()) * Methods that prepare the container/component for use (e.g connection.setSavePoint()) * Methods that the users directly interact with and expect certain output (e.g resultSet.getInt())</p>
+<p>Based on the above classification we have followed the simple rules given below. These standardizes how the mock containers behave and if you are looking for creating extensions, you would follow the same classification.</p>
+<table class="bodyTable"><tbody><tr class="a"><td align="left">Method types</td>
+<td align="left">Examples</td>
+<td align="left">Has Implementation</td>
+<td align="left">Needs Mock Ixmplementation</td>
+</tr>
+<tr class="b"><td align="left">Container<br />
+Specific</td>
+<td align="left">connection.commit()<br />
+connection.createStatement()</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+</tr>
+<tr class="a"><td align="left">Getter/<br />
+Setters</td>
+<td align="left">connection.getHoldability()<br />
+connection.setHoldability()</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+</tr>
+<tr class="b"><td align="left">Prepare methods</td>
+<td align="left">connection.setSavePoint()</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+</tr>
+<tr class="a"><td align="left">Integration</td>
+<td align="left">resultSet.getInt()</td>
+<td align="left">No</td>
+<td align="left">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Some of the cases are explained in detail</p>
+<ol type="1"><li>Simple getters that you do not do anything with...if you prefer to override, you still override the corresponding _method. <p><tt>public boolean getAutoCommit() throws SQLException { <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+return _getAutoCommit(); <br />
+} <br />
+<br />
+public boolean _getAutoCommit() { <br />
+return autoCommitState \=\= AutoCommitState.ENABLED?true:false; <br />
+}</tt> </p>
+</li>
+<li>Simple setters that you do not do anything with...if you prefer to override, you do the actual method override <p><tt>public void setAutoCommit(boolean autoCommit) throws SQLException { <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+_setAutoCommit(autoCommit); &#160; } <br />
+<br />
+public void _setAutoCommit(boolean autoCommit) { <br />
+autoCommitState = autoCommit? AutoCommitState.ENABLED:AutoCommitState.DISABLED; <br />
+} </tt> </p>
+</li>
+<li>Interactions methods - Because this is not a getter (as there is not direct setter for this one, if you are using this, you will have to override its corresponding _getWarnings() method and tell exactly what you want the framework to return to you. <tt>public SQLWarning getWarnings() throws SQLException { <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+return _getWarnings(); <br />
+} <br />
+<br />
+public SQLWarning _getWarnings() { <br />
+throw new NeedsMockDefinitionException(); <br />
+}</tt> <p>Another Example<br />
+<tt> public boolean last() throws SQLException { <br />
+assertThat(mockState, AnyOf.anyOf(IsNot.not(ResultSetState.CLOSE), IsNot.not(ResultSetState.AUTOCLOSE))); <br />
+return _last(); <br />
+} <br />
+<br />
+public boolean _last() { <br />
+throw new NeedsMockDefinitionException(); \ }</tt> </p>
+</li>
+<li>Container Specific - The framework is directly responsible for giving you the statement and keep track of the same. If you want to overrride it, say to throw the SQLException, you override the _createStatement method. <p><tt> public Statement createStatement() throws SQLException { <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+MockStatement st= _createStatement(); <br />
+mockStatements.add(st); <br />
+return st; <br />
+} <br />
+<br />
+public MockStatement _createStatement() { <br />
+return new MockStatement(this); <br />
+} </tt> </p>
+<p>Another example<br />
+<tt> public void commit() throws SQLException { <br />
+try{ <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+assertThat(autoCommitState, Is.is(AutoCommitState.DISABLED)); <br />
+mockTransactionState = TransactionState.COMMIT; <br />
+_commit(); <br />
+} catch (SQLException e){ <br />
+mockTransactionState = TransactionState.AUTOROLLBACK; <br />
+throw e; <br />
+} <br />
+} <br />
+<br />
+public void _commit() throws SQLException { <br />
+} </tt> </p>
+</li>
+<li>Container Specific - Special case of the above, contains container state management stuff that you can still override without disrupting the framework <p><tt>public void rollback(Savepoint savepoint) throws SQLException { <br />
+assertThat(mockConnectionState, IsNot.not(ConnectionState.CLOSE)); <br />
+assertThat(autoCommitState, Is.is(AutoCommitState.DISABLED)); <br />
+mockTransactionState = TransactionState.ROLLBACK; <br />
+_rollback(savepoint); <br />
+} <br />
+<br />
+public void _rollback(Savepoint savepoint) throws SQLException { <br />
+}</tt> </p>
+</li>
+<li>Preparation Methods - Nothing special about these. Holds internal state.<p><tt> public void clearBatch() throws SQLException { <br />
+assertThat(mockState, AnyOf.anyOf(IsNot.not(StatementState.CLOSE), IsNot.not(StatementState.AUTOCLOSE))); <br />
+assertThat(&quot;Auto Commit State&quot;, parent.autoCommitState, Is.is(MockConnection.AutoCommitState.DISABLED)); <br />
+_clearBatch(); <br />
+} <br />
+<br />
+public void _clearBatch() { <br />
+batchSQLs.clear(); <br />
+} </tt> </p>
+</li>
+</ol>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009-2010
+    
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

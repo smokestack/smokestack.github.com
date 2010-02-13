@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Smokestack JDBC 3.0 - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+          </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="" id="bannerLeft">
+    
+            Smokestack JDBC 3.0
+    
+            </a>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2010-02-13
+                      </div>
+            <div class="xright">            <a href="../">Home</a>
+            |
+                <a href="http://smokestack.github.com/smokestack-jdbc-3.0" class="externalLink">Home</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Documentation</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Home</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="source"><pre>JDBC Module Usage</pre>
+</div>
+<p>JDBC Module provides the following: [[1]] You can use Driver or Datasource implementation</p>
+<p>Example for Driver implementation</p>
+<ul><li>use the mockDriver Class.forName(&quot;com.github.smokestack.jdbc.MockDriver&quot;); * call your method to be tested * Your asserts here * Get access to the mock connection object <i>MockConnection c=MockDriver.instance.getMockConnections().get(0);</i> font. * Assert that all is good with the container <i> c.assertExplicitClose(); </i> font.</li>
+</ul>
+<ol type="1"><li>Implementation with DataSource<ul><li>Bind the mock datasource <i> MockDataSource ds = MockDataSource.getInstance(); Context ctx = new InitialContext(); ctx.bind(&quot;jdbc/dsName&quot;, ds); </i> font. * Call your method to be tested * Your asserts here * Get access to the mock connection object <i> MockConnection c=MockDataSource.instance.getMockConnections().get(0);</i> font. * Assert that all is good with the container <i> c.assertClosed();</i> font.</li>
+</ul>
+<p>You can refer to the samples provided along with the source for more details.</p>
+</li>
+</ol>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009-2010
+    
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

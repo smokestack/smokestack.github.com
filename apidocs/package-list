@@ -1,0 +1,9 @@
+com.github.smokestack.ejb
+com.github.smokestack.ejb.internal
+com.github.smokestack.exception
+com.github.smokestack.jca.cci
+com.github.smokestack.jca.spi
+com.github.smokestack.jdbc
+com.github.smokestack.jms
+com.github.smokestack.jndi
+com.github.smokestack.jpa

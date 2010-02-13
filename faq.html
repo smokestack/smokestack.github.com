@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Smokestack - FAQ</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+          </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="" id="bannerLeft">
+    
+            Smokestack
+    
+            </a>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2010-02-13
+                      </div>
+            <div class="xright">            <a href="http://smokestack.github.com/" class="externalLink">Home</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Documentation</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="design.html">Design</a>
+          </li>
+              
+    <li class="none">
+                    <a href="usage.html">Usage</a>
+          </li>
+              
+    <li class="none">
+              <strong>FAQ</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="extensionguidelines.html">Extensions Guidelines</a>
+          </li>
+          </ul>
+              <h5>Modules</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="smokestack-common/index.html">Smokestack Common</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jndi-1.2/index.html">Smokestack JNDI 1.2</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jpa-1.0/index.html">Smokestack JPA 1.0</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jms-1.1/index.html">Smokestack JMS 1.1</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jca-1.5/index.html">Smokestack JCA 1.5</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-ejb-3.0/index.html">Smokestack EJB 3.0</a>
+          </li>
+              
+    <li class="none">
+                    <a href="smokestack-jdbc-3.0/index.html">Smokestack JDBC 3.0</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="top">FAQ</a></h2>
+<ol type="1"><li><a href="#modular">Why there are so many jar file?</a></li>
+<li><a href="#embedded">Should I just run a JEE container embedded?</a></li>
+<li><a href="#a_">Why do you have methods starting with underscore. Isn't this against Java naming convention?</a></li>
+<li><a href="#overrride">Do I have to override all methods prefixed with "_"?</a></li>
+<li><a href="#actualMethodOverride">I want to override the default functionality. Do I always override methods prefixed with "_"?</a></li>
+<li><a href="#NotYetImplemented">I am getting "NotYetImplemented" exception. What does it mean?</a></li>
+<li><a href="#CanIHelp">Can I help in something?</a></li>
+</ol>
+</div>
+<dl><dt><a name="modular">Why there are so many jar file?</a></dt>
+<dd>
+        <p>
+          Smokestack has a modular approach, where only the necessary modules (jar files) will
+          have to be included in projects. The setup should also allow mix-and-match of
+          mock and real JEE component implementations.
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="embedded">Should I just run a JEE container embedded?</a></dt>
+<dd>
+        <p>
+          The JEE runtime containers by definition are geared to be a runtime implementation,
+          while Smokestack targets testing, offering a lean implementation, validation
+          of component states, and easy way to override functionality, allowing to exercise
+          code all kinds of ways. 
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="a_">Why do you have methods starting with underscore. Isn't this against Java naming convention?</a></dt>
+<dd>
+        <p>
+          This has been discussed and discussed again. There were two options available. Prefix the 
+          methods to be overridden by say "mock" e.g mockSetLong() but the readability was 
+          getting affected as compared to "_setLong()". But the convincing argument was that
+          we are never overriding the JEE methods but providing some way of allowing you to 
+          handle the behavior of that particular method without taking away the benefits of the framework.
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="overrride">Do I have to override all methods prefixed with "_"?</a></dt>
+<dd>
+        <p>
+          No not always. You will however override "all" methods that throw "NeedsMockImplementation" exception.
+          We have tried to provide implementation to most of the methods. However
+          there are "Edge Interactions" that have to be overriden. Example of this would be
+          resultSet.next(). We have no idea what the return should be in this case. Do you 
+          want a true or do you want a false. Instead of introducing ambuguity and you trying to deciper
+          what is the default value, we throw "NeedsMockImplementation" that will force you 
+          to override the corresponding "_next()" method. 
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="actualMethodOverride">I want to override the default functionality. Do I always override methods prefixed with "_"?</a></dt>
+<dd>
+        <p>
+          Yes. You will always override the corresponding method prefixed with "_". 
+          This ensures that the internal state of the mock container is managed appropriately. 
+          However this does not mean that you cannot override the actual JEE method. 
+          If you do override, however, you should be aware that the state of the mock container 
+          is undefined from that point onwards and the convenience assertions methods provided will not work.  
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="NotYetImplemented">I am getting "NotYetImplemented" exception. What does it mean?</a></dt>
+<dd>
+        <p>
+           We have tried to cover as much area in each module as possible but we have not 
+           covered all of the functionality. In those circumstances, the mock container will 
+           throw "NotYetImplemented". It basically means that we do not have a testcase to 
+           test that functionality. So if you do encounter the "NotYetImplemented" exception
+           send us your testcase and we will try to get a solution as soon as possible. 
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="CanIHelp">Can I help in something?</a></dt>
+<dd>
+        <p>
+           Of course you can. You are more than welcome to send us feedback, suggestion, 
+           recommendation, code etc. We would love to hear from you at 
+           <link href="http://github.com/smokestack/smokestack">Github</link>. 
+       </p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table></dd>
+</dl>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009-2010
+    
+          Smokestack
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
