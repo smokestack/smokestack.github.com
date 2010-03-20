@@ -57,13 +57,13 @@
 <a name="47" href="#47">47</a>  		c.bind(<span class="jxr_string">"queue"</span>, <strong class="jxr_keyword">new</strong> MockQueue(<span class="jxr_string">"queueName"</span>));
 <a name="48" href="#48">48</a>  
 <a name="49" href="#49">49</a>  		<strong class="jxr_keyword">new</strong> Expectations(){
-<a name="50" href="#50">50</a>  			@Mocked( methods= {<span class="jxr_string">"getEnumeration"</span>})
+<a name="50" href="#50">50</a>  			@Mocked( methods= {<span class="jxr_string">"_getEnumeration"</span>})
 <a name="51" href="#51">51</a>  			MockQueueBrowser b;
 <a name="52" href="#52">52</a>  			{
 <a name="53" href="#53">53</a>  				Vector&lt;TextMessage&gt; v=<strong class="jxr_keyword">new</strong> Vector&lt;TextMessage&gt;();
 <a name="54" href="#54">54</a>  				v.add(<strong class="jxr_keyword">new</strong> MockTextMessage(<span class="jxr_string">"queue message 1"</span>));
 <a name="55" href="#55">55</a>  				v.add(<strong class="jxr_keyword">new</strong> MockTextMessage(<span class="jxr_string">"queue message 2"</span>));
-<a name="56" href="#56">56</a>  				b.getEnumeration(); returns(v.elements());
+<a name="56" href="#56">56</a>  				b._getEnumeration(); returns(v.elements());
 <a name="57" href="#57">57</a>  			}
 <a name="58" href="#58">58</a>  		};
 <a name="59" href="#59">59</a>  		

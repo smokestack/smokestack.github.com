@@ -42,7 +42,7 @@
   
     
             <div class="xleft">
-        Last Published: 2010-02-13
+        Last Published: 2010-03-20
                       </div>
             <div class="xright">            <a href="../">Home</a>
             |
@@ -232,79 +232,85 @@
 <th>Line</th>
 <th>Priority</th>
 </tr>
-<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.classpathLocations is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="a"><td>Dead store to url in com.github.smokestack.ejb.internal.ClassFinder.getClasspathLocations()</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
+<td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#126">126</a></td>
+<td>Low</td>
+</tr>
+<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.classpathLocations is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#">Not available</a></td>
 <td>High</td>
 </tr>
-<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#259">259-279</a></td>
 <td>High</td>
 </tr>
-<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#274">274</a></td>
 <td>High</td>
 </tr>
-<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.getClasspathLocations() is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.getClasspathLocations() is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#110">110-130</a></td>
 <td>High</td>
 </tr>
-<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.include(String, File, Map) is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.include(String, File, Map) is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#155">155-181</a></td>
 <td>High</td>
 </tr>
-<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.includeJar(File, Map) is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.includeJar(File, Map) is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#184">184-223</a></td>
 <td>High</td>
 </tr>
-<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.includeResourceLocations(String, Map) is or uses a map or set of URLs, which can be a performance hog</td>
+<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.includeResourceLocations(String, Map) is or uses a map or set of URLs, which can be a performance hog</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DMI_COLLECTION_OF_URLS">DMI_COLLECTION_OF_URLS</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#242">242-255</a></td>
 <td>High</td>
 </tr>
-<tr class="b"><td>Use of non-localized String.toUpperCase() or String.toLowerCase</td>
+<tr class="a"><td>Use of non-localized String.toUpperCase() or String.toLowerCase</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_CONVERT_CASE">DM_CONVERT_CASE</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#211">211</a></td>
 <td>Low</td>
 </tr>
-<tr class="a"><td>com.github.smokestack.ejb.internal.ClassFinder.getPackagePath(String) invokes inefficient new String(String) constructor</td>
+<tr class="b"><td>com.github.smokestack.ejb.internal.ClassFinder.getPackagePath(String) invokes inefficient new String(String) constructor</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_STRING_CTOR">DM_STRING_CTOR</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#435">435</a></td>
 <td>Medium</td>
 </tr>
-<tr class="b"><td>Synchronization on ClassFinder.classpathLocations in futile attempt to guard it</td>
+<tr class="a"><td>Synchronization on ClassFinder.classpathLocations in futile attempt to guard it</td>
 <td>MT_CORRECTNESS</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD">ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#45">45</a></td>
 <td>High</td>
 </tr>
-<tr class="a"><td>Exception is caught when Exception is not thrown in com.github.smokestack.ejb.internal.ClassFinder.includeJar(File, Map)</td>
+<tr class="b"><td>Exception is caught when Exception is not thrown in com.github.smokestack.ejb.internal.ClassFinder.includeJar(File, Map)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#194">194</a></td>
 <td>Medium</td>
 </tr>
-<tr class="b"><td>Private method com.github.smokestack.ejb.internal.ClassFinder.includeResourceLocations(String, Map) is never called</td>
+<tr class="a"><td>Private method com.github.smokestack.ejb.internal.ClassFinder.includeResourceLocations(String, Map) is never called</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#UPM_UNCALLED_PRIVATE_METHOD">UPM_UNCALLED_PRIVATE_METHOD</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#242">242-255</a></td>
 <td>Low</td>
 </tr>
-<tr class="a"><td>Method com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+<tr class="b"><td>Method com.github.smokestack.ejb.internal.ClassFinder.findSubclasses(Class, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
 <td><a href="./xref/com/github/smokestack/ejb/internal/ClassFinder.html#274">274</a></td>

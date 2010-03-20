@@ -1,0 +1,42 @@
+-classpath
+'/tmp/smokestack/target/checkout/smokestack-common/target/classes:/tmp/smokestack/target/checkout/smokestack-common/target/test-classes:/home/gliptak/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/gliptak/.m2/repository/junit/junit/4.7/junit-4.7.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/tmp/smokestack/target/checkout/smokestack-common/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2009-2010 <a href="http://smokestack.github.com/">Smokestack</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/tmp/smokestack/target/checkout/smokestack-common/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Smokestack Common 0.1 Test API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://java.sun.com/javaee/6/docs/api'
+-link
+'../apidocs'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-linkoffline
+'http://smokestack.github.com/smokestack-jndi-1.2/apidocs' '/tmp/smokestack/target/checkout/smokestack-jndi-1.2/target/site/testapidocs'
+-linkoffline
+'http://smokestack.github.com/smokestack-jpa-1.0/apidocs' '/tmp/smokestack/target/checkout/smokestack-jpa-1.0/target/site/testapidocs'
+-linkoffline
+'http://smokestack.github.com/smokestack-jms-1.1/apidocs' '/tmp/smokestack/target/checkout/smokestack-jms-1.1/target/site/testapidocs'
+-linkoffline
+'http://smokestack.github.com/smokestack-jca-1.5/apidocs' '/tmp/smokestack/target/checkout/smokestack-jca-1.5/target/site/testapidocs'
+-linkoffline
+'http://smokestack.github.com/smokestack-ejb-3.0/apidocs' '/tmp/smokestack/target/checkout/smokestack-ejb-3.0/target/site/testapidocs'
+-linkoffline
+'http://smokestack.github.com/smokestack-jdbc-3.0/apidocs' '/tmp/smokestack/target/checkout/smokestack-jdbc-3.0/target/site/testapidocs'
+-use
+-version
+-windowtitle
+'Smokestack Common 0.1 Test API'

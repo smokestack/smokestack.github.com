@@ -1,0 +1,30 @@
+-classpath
+'/tmp/smokestack/target/checkout/target/classes:/tmp/smokestack/target/checkout/target/test-classes:/tmp/smokestack/target/checkout/smokestack-common/target/classes:/tmp/smokestack/target/checkout/smokestack-common/target/test-classes:/tmp/smokestack/target/checkout/smokestack-jndi-1.2/target/classes:/tmp/smokestack/target/checkout/smokestack-jndi-1.2/target/test-classes:/tmp/smokestack/target/checkout/smokestack-jpa-1.0/target/classes:/tmp/smokestack/target/checkout/smokestack-jpa-1.0/target/test-classes:/tmp/smokestack/target/checkout/smokestack-jms-1.1/target/classes:/tmp/smokestack/target/checkout/smokestack-jms-1.1/target/test-classes:/tmp/smokestack/target/checkout/smokestack-jca-1.5/target/classes:/tmp/smokestack/target/checkout/smokestack-jca-1.5/target/test-classes:/tmp/smokestack/target/checkout/smokestack-ejb-3.0/target/classes:/tmp/smokestack/target/checkout/smokestack-ejb-3.0/target/test-classes:/tmp/smokestack/target/checkout/smokestack-jdbc-3.0/target/classes:/tmp/smokestack/target/checkout/smokestack-jdbc-3.0/target/test-classes:/home/gliptak/.m2/repository/junit/junit/4.7/junit-4.7.jar:/home/gliptak/.m2/repository/javax/ejb/ejb-api/3.0/ejb-api-3.0.jar:/home/gliptak/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/home/gliptak/.m2/repository/com/github/smokestack/smokestack-jpa-1.0/0.1/smokestack-jpa-1.0-0.1.jar:/home/gliptak/.m2/repository/com/github/smokestack/smokestack-jndi-1.2/0.1/smokestack-jndi-1.2-0.1.jar:/home/gliptak/.m2/repository/javax/resource/connector-api/1.5/connector-api-1.5.jar:/home/gliptak/.m2/repository/com/github/smokestack/smokestack-common/0.1/smokestack-common-0.1.jar:/home/gliptak/.m2/repository/javax/jms/jms/1.1/jms-1.1.jar:/home/gliptak/.m2/repository/mockit/jmockit/0.996/jmockit-0.996.jar:/home/gliptak/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/gliptak/.m2/repository/org/hamcrest/hamcrest-all/1.1/hamcrest-all-1.1.jar:/home/gliptak/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/home/gliptak/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/tmp/smokestack/target/checkout/smokestack-common/src/test/java:/tmp/smokestack/target/checkout/smokestack-jndi-1.2/src/test/java:/tmp/smokestack/target/checkout/smokestack-jpa-1.0/src/test/java:/tmp/smokestack/target/checkout/smokestack-jms-1.1/src/test/java:/tmp/smokestack/target/checkout/smokestack-jca-1.5/src/test/java:/tmp/smokestack/target/checkout/smokestack-ejb-3.0/src/test/java:/tmp/smokestack/target/checkout/smokestack-jdbc-3.0/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2009-2010 <a href="http://smokestack.github.com/">Smokestack</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/tmp/smokestack/target/checkout/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Smokestack 0.1 Test API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://java.sun.com/javaee/6/docs/api'
+-link
+'../apidocs'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-use
+-version
+-windowtitle
+'Smokestack 0.1 Test API'

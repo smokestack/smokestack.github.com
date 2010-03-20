@@ -46,10 +46,10 @@
 <a name="36" href="#36">36</a>  <em class="jxr_comment">	 */</em>
 <a name="37" href="#37">37</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addConnectionEventListener(ConnectionEventListener listener) {
 <a name="38" href="#38">38</a>  		_addConnectionEventListener(listener);
-<a name="39" href="#39">39</a>  	}
-<a name="40" href="#40">40</a>  
-<a name="41" href="#41">41</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _addConnectionEventListener(ConnectionEventListener listener) {
-<a name="42" href="#42">42</a>  		listeners.add(listener);
+<a name="39" href="#39">39</a>  		listeners.add(listener);
+<a name="40" href="#40">40</a>  	}
+<a name="41" href="#41">41</a>  
+<a name="42" href="#42">42</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _addConnectionEventListener(ConnectionEventListener listener) {
 <a name="43" href="#43">43</a>  	}
 <a name="44" href="#44">44</a>  
 <a name="45" href="#45">45</a>  	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
@@ -111,61 +111,62 @@
 <a name="101" href="#101">101</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#getLogWriter()</em>
 <a name="102" href="#102">102</a> <em class="jxr_comment">	 */</em>
 <a name="103" href="#103">103</a> 	<strong class="jxr_keyword">public</strong> PrintWriter getLogWriter() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="104" href="#104">104</a> 		<strong class="jxr_keyword">return</strong> _getLogWriter();
-<a name="105" href="#105">105</a> 	}
-<a name="106" href="#106">106</a> 
-<a name="107" href="#107">107</a> 	<strong class="jxr_keyword">public</strong> PrintWriter _getLogWriter() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="108" href="#108">108</a> 		<strong class="jxr_keyword">return</strong> printWriter;
-<a name="109" href="#109">109</a> 	}
-<a name="110" href="#110">110</a> 
-<a name="111" href="#111">111</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="112" href="#112">112</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#getMetaData()</em>
-<a name="113" href="#113">113</a> <em class="jxr_comment">	 */</em>
-<a name="114" href="#114">114</a> 	<strong class="jxr_keyword">public</strong> ManagedConnectionMetaData getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="115" href="#115">115</a> 		<strong class="jxr_keyword">return</strong> _getMetaData();
-<a name="116" href="#116">116</a> 	}
-<a name="117" href="#117">117</a> 
-<a name="118" href="#118">118</a> 	<strong class="jxr_keyword">public</strong> ManagedConnectionMetaData _getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="119" href="#119">119</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/spi/MockManagedConnectionMetadata.html">MockManagedConnectionMetadata</a>();
-<a name="120" href="#120">120</a> 	}
-<a name="121" href="#121">121</a> 
-<a name="122" href="#122">122</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="123" href="#123">123</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#getXAResource()</em>
-<a name="124" href="#124">124</a> <em class="jxr_comment">	 */</em>
-<a name="125" href="#125">125</a> 	<strong class="jxr_keyword">public</strong> XAResource getXAResource() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="126" href="#126">126</a> 		<strong class="jxr_keyword">return</strong> _getXAResource();
-<a name="127" href="#127">127</a> 	}
-<a name="128" href="#128">128</a> 
-<a name="129" href="#129">129</a> 	<strong class="jxr_keyword">public</strong> XAResource _getXAResource() <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="130" href="#130">130</a> 		<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> NotYetImplementedException();
-<a name="131" href="#131">131</a> 	}
-<a name="132" href="#132">132</a> 
-<a name="133" href="#133">133</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="134" href="#134">134</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#removeConnectionEventListener(javax.resource.spi.ConnectionEventListener)</em>
-<a name="135" href="#135">135</a> <em class="jxr_comment">	 */</em>
-<a name="136" href="#136">136</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeConnectionEventListener(ConnectionEventListener listener) {
-<a name="137" href="#137">137</a> 		_removeConnectionEventListener(listener);
-<a name="138" href="#138">138</a> 	}
-<a name="139" href="#139">139</a> 
-<a name="140" href="#140">140</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _removeConnectionEventListener(ConnectionEventListener listener) {
-<a name="141" href="#141">141</a> 		listeners.remove(listener);
-<a name="142" href="#142">142</a> 	}
-<a name="143" href="#143">143</a> 
-<a name="144" href="#144">144</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
-<a name="145" href="#145">145</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#setLogWriter(java.io.PrintWriter)</em>
-<a name="146" href="#146">146</a> <em class="jxr_comment">	 */</em>
-<a name="147" href="#147">147</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setLogWriter(PrintWriter printWriter) <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="148" href="#148">148</a> 		_setLogWriter(printWriter);
-<a name="149" href="#149">149</a> 	}
-<a name="150" href="#150">150</a> 
-<a name="151" href="#151">151</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _setLogWriter(PrintWriter printWriter) <strong class="jxr_keyword">throws</strong> ResourceException {
-<a name="152" href="#152">152</a> 		<strong class="jxr_keyword">this</strong>.printWriter=printWriter;
-<a name="153" href="#153">153</a> 	}
-<a name="154" href="#154">154</a> 
-<a name="155" href="#155">155</a> 	<strong class="jxr_keyword">public</strong> String toString(){
-<a name="156" href="#156">156</a> 		<strong class="jxr_keyword">return</strong> ReflectionToStringBuilder.toString(<strong class="jxr_keyword">this</strong>, ToStringStyle.MULTI_LINE_STYLE);
-<a name="157" href="#157">157</a> 	}
-<a name="158" href="#158">158</a> }
+<a name="104" href="#104">104</a> 		_getLogWriter();
+<a name="105" href="#105">105</a> 		<strong class="jxr_keyword">return</strong> printWriter;
+<a name="106" href="#106">106</a> 	}
+<a name="107" href="#107">107</a> 
+<a name="108" href="#108">108</a> 	<strong class="jxr_keyword">public</strong> PrintWriter _getLogWriter() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="109" href="#109">109</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
+<a name="110" href="#110">110</a> 	}
+<a name="111" href="#111">111</a> 
+<a name="112" href="#112">112</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="113" href="#113">113</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#getMetaData()</em>
+<a name="114" href="#114">114</a> <em class="jxr_comment">	 */</em>
+<a name="115" href="#115">115</a> 	<strong class="jxr_keyword">public</strong> ManagedConnectionMetaData getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="116" href="#116">116</a> 		<strong class="jxr_keyword">return</strong> _getMetaData();
+<a name="117" href="#117">117</a> 	}
+<a name="118" href="#118">118</a> 
+<a name="119" href="#119">119</a> 	<strong class="jxr_keyword">public</strong> ManagedConnectionMetaData _getMetaData() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="120" href="#120">120</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/github/smokestack/jca/spi/MockManagedConnectionMetadata.html">MockManagedConnectionMetadata</a>();
+<a name="121" href="#121">121</a> 	}
+<a name="122" href="#122">122</a> 
+<a name="123" href="#123">123</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="124" href="#124">124</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#getXAResource()</em>
+<a name="125" href="#125">125</a> <em class="jxr_comment">	 */</em>
+<a name="126" href="#126">126</a> 	<strong class="jxr_keyword">public</strong> XAResource getXAResource() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="127" href="#127">127</a> 		<strong class="jxr_keyword">return</strong> _getXAResource();
+<a name="128" href="#128">128</a> 	}
+<a name="129" href="#129">129</a> 
+<a name="130" href="#130">130</a> 	<strong class="jxr_keyword">public</strong> XAResource _getXAResource() <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="131" href="#131">131</a> 		<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> NotYetImplementedException();
+<a name="132" href="#132">132</a> 	}
+<a name="133" href="#133">133</a> 
+<a name="134" href="#134">134</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="135" href="#135">135</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#removeConnectionEventListener(javax.resource.spi.ConnectionEventListener)</em>
+<a name="136" href="#136">136</a> <em class="jxr_comment">	 */</em>
+<a name="137" href="#137">137</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeConnectionEventListener(ConnectionEventListener listener) {
+<a name="138" href="#138">138</a> 		_removeConnectionEventListener(listener);
+<a name="139" href="#139">139</a> 		listeners.remove(listener);
+<a name="140" href="#140">140</a> 	}
+<a name="141" href="#141">141</a> 
+<a name="142" href="#142">142</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _removeConnectionEventListener(ConnectionEventListener listener) {
+<a name="143" href="#143">143</a> 	}
+<a name="144" href="#144">144</a> 
+<a name="145" href="#145">145</a> 	<em class="jxr_comment">/*<em class="jxr_comment"> (non-Javadoc)</em></em>
+<a name="146" href="#146">146</a> <em class="jxr_comment">	 * @see javax.resource.spi.ManagedConnection#setLogWriter(java.io.PrintWriter)</em>
+<a name="147" href="#147">147</a> <em class="jxr_comment">	 */</em>
+<a name="148" href="#148">148</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setLogWriter(PrintWriter printWriter) <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="149" href="#149">149</a> 		_setLogWriter(printWriter);
+<a name="150" href="#150">150</a> 		<strong class="jxr_keyword">this</strong>.printWriter=printWriter;
+<a name="151" href="#151">151</a> 	}
+<a name="152" href="#152">152</a> 
+<a name="153" href="#153">153</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> _setLogWriter(PrintWriter printWriter) <strong class="jxr_keyword">throws</strong> ResourceException {
+<a name="154" href="#154">154</a> 	}
+<a name="155" href="#155">155</a> 
+<a name="156" href="#156">156</a> 	<strong class="jxr_keyword">public</strong> String toString(){
+<a name="157" href="#157">157</a> 		<strong class="jxr_keyword">return</strong> ReflectionToStringBuilder.toString(<strong class="jxr_keyword">this</strong>, ToStringStyle.MULTI_LINE_STYLE);
+<a name="158" href="#158">158</a> 	}
+<a name="159" href="#159">159</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
